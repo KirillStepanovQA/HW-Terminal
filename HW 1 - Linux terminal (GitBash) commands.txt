@@ -1,0 +1,69 @@
+HW_1. Linux terminal (GitBash) commands
+
+1) Посмотреть где я - pwd
+
+2) Создать папку - mkdir qa_dir
+
+3) Зайти в папку - cd qa_dir
+
+4) Создать 3 папки - mkdir qa_dir1 qa_dir2 qa_dir3
+
+5) Зайти в любую папку - cd test/group_29_free/qa_dir/qa_dir3
+
+6) Создать 5 файлов (3 txt, 2 json) - touch t1.txt t2.txt t3.txt d1.json d2.json
+
+7) Создать 3 папки - mkdir qa_dir4 qa_dir5 qa_dir6
+
+8) Вывести список содержимого папки - ls-la
+
+9) + Открыть любой txt файл. - cat >> t1.txt
+
+10) + написать туда что-нибудь, любой текст. - текст Enter
+
+11) + сохранить и выйти. - Ctrl + C
+
+12) Выйти из папки на уровень выше - cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку. - mv qa_dir3/t3.txt qa_dir4/t3.txt
+									   mv qa_dir3/t4.txt qa_dir4/t4.txt
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку. - cp qa_dir3/t1.txt qa_dir4/t1.txt
+									   cp qa_dir3/t2.txt qa_dir4/t2.txt
+
+15) Найти файл по имени - find . -name t1.txt
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает. - tail –f t1.txt | grep --line-buffered qwerty >> t2.txt
+
+17) вывести несколько первых строк из текстового файла - head -n3 t1.txt
+
+18) вывести несколько последних строк из текстового файла - tail -n3 t1.txt
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает. - less bigtext.txt
+
+20) вывести дату и время - date
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request - curl http://162.55.220.72:5005/terminal-hw-request
+после ответа сервера выполняю полученные инструкции - сurl -X post "http://162.55.220.72:5005/get_method?name=kirill&age=35"
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+Создаем текстовый файл:
+#!/bin/bash
+cd qa_dir
+mkdir qa_dir1 qa_dir2 qa_dir3
+cd qa_dir3
+touch t1.txt t2.txt t3.txt d1.json d2.json
+mkdir qa_dir4 qa_dir5 qa_dir6
+ls -la
+mv t1.txt qa_dir4/t1.txt
+mv t2.txt qa_dir5/t2.txt
+
+Делаем его исполняемым - chmod +x ./myscript.txt
+Запускаем скрипт - ./myscript.txt
+
+
+
+
+
